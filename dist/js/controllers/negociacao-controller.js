@@ -26,12 +26,6 @@ export class negociacaoController {
     ehDiaUtil(data) {
         return data.getDay() > DiaDaSemana.dom && data.getDay() < DiaDaSemana.sab;
     }
-    // public criaNegociacao(): Negociacao {
-    //     const date = new Date(this.inputData.value.replace('-', ','));
-    //     const quantidade = parseInt(this.inputQuantidade.value);
-    //     const valor = parseFloat(this.inputValor.value);
-    //     return new Negociacao(date, quantidade, valor);
-    // }
     atualizarView() {
         this.negociacoesView.update(this.negociacoes);
         this.mensagemView.update('Negociação adicionada!');
