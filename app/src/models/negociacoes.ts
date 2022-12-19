@@ -1,6 +1,8 @@
+
+import { Modelo } from "../interfaces/modelo.js";
 import { Negociacao } from "./negociacao.js";
 
-export class Negociacoes {
+export class Negociacoes implements Modelo<Negociacoes> {
     private negociacoes: Negociacao[] = [];
 
     public adicionar(negociacao: Negociacao): void {
@@ -15,9 +17,8 @@ export class Negociacoes {
     public paraTexto(): string {
         return JSON.stringify(this.negociacoes, null);
     }
-}
 
-const negociacoes = new Negociacoes();
-negociacoes.listar().forEach(n => {
-    n.data, n.quantidade, n.valor
-});
+    public jaAdd(negociacoes: Negociacoes): boolean{
+        return JSON.stringify(this.negociacoes) === JSON.stringify(negociacoes.listar());
+    }
+}

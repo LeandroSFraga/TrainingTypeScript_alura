@@ -1,4 +1,4 @@
-import { NegociacaoController } from "./controllers/negociacao-controller.js";
+import { NegociacaoController } from "./src/controllers/negociacao-controller.js";
 const controller = new NegociacaoController();
 const form = document.querySelector('.form');
 if (form) {
@@ -19,3 +19,4 @@ if (botaoImporta) {
 else {
     throw Error('Botao nao encontrado');
 }
+//# sourceMappingURL=app.js.map
