@@ -11,6 +11,10 @@ export class Negociacoes {
     public listar(): readonly Negociacao[] {
         return this.negociacoes;
     }
+
+    public paraTexto(): string {
+        return JSON.stringify(this.negociacoes, null);
+    }
 }
 
 const negociacoes = new Negociacoes();
