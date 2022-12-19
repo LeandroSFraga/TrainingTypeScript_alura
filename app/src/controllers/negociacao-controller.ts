@@ -7,6 +7,7 @@ import { logarTempoExecucao } from "../decorators/tempo-exec.js";
 import { domInjector } from "../decorators/dom-injector.js";
 import { NegociacaoDoDia } from "../interfaces/negociacao-do-dia.js";
 import { NegociacoesService } from "../services/negociacoes-service.js";
+import { imprimir } from "../utils/imprimir.js";
 
 export class NegociacaoController {
     @domInjector('#data')
@@ -37,6 +38,7 @@ export class NegociacaoController {
             return;
         }
         this.negociacoes.adicionar(negociacao);
+        imprimir(negociacao, this.negociacoes);
         this.limparForm();
         this.atualizarView();
     }
